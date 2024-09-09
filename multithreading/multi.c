@@ -26,11 +26,9 @@ int main(int argc, char *argv[])
 
     srand(time(NULL));
 
-    // Create two threads to fill arrays with random data
     pthread_create(&thread1, NULL, arr_fill, (void*)value1);
     pthread_create(&thread2, NULL, arr_fill, (void*)value2);
 
-    // Wait for threads to finish
     pthread_join(thread1, NULL);
     pthread_join(thread2, NULL);
 
